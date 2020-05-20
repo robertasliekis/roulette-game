@@ -18,8 +18,10 @@ var winChipsSound = new Audio("sounds/win-chips.mp3");
 var ambientSound = new Audio("sounds/ambient-sounds.mp3");
 var backgroundMusic = new Audio("sounds/background-music.mp3");
 
-ambientSound.play();
-backgroundMusic.play();
+$(".website-wrapper").click(function () {
+  ambientSound.play();
+  backgroundMusic.play();
+});
 
 ambientSound.loop = true;
 backgroundMusic.loop = true;
