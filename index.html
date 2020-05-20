@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Online roulette game." />
+    <title>Roulette</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+  </head>
+  <body class="index">
+    <div class="website-wrapper" id="website-wrapper">
+      <div class="roulette-table">
+        <div class="top-bar">
+          <div class="roulette-rolls-container">
+            <div class="roll roll5"></div>
+            <div class="roll roll4"></div>
+            <div class="roll roll3"></div>
+            <div class="roll roll2"></div>
+            <div class="roll roll1"></div>
+            <div class="roll roll-last"></div>
+          </div>
+          <div class="game-name">ROULETTE</div>
+          <div class="min-max-bet">
+            <div class="min-bet bet-size">MIN: $5.00</div>
+            <div class="max-bet bet-size">MAX: $1000.00</div>
+          </div>
+        </div>
+        <div class="roulette-wheel-container">
+          <div class="roulette-wheel">
+            <div class="roulette-wheel-main roulette-image"></div>
+            <div class="roulette-center roulette-image"></div>
+            <div class="roulette-cross-shadow roulette-image"></div>
+            <div class="roulette-cross roulette-image">
+              <div class="number-glow-container">
+                <!-- <div class="number-glow number-glow1"></div>
+             <div class="number-glow number-glow2"></div> -->
+              </div>
+            </div>
+
+            <div class="ball-container">
+              <!-- <div class="ball-spinner">
+              <div class="ball"></div>
+            </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="betting-area">
+          <div class="top-area">
+            <div class="number number0 regular regular0 part"></div>
+            <div class="number number3 black"></div>
+            <div class="number number2 red"></div>
+            <div class="number number1 black"></div>
+            <div class="number number6 red"></div>
+            <div class="number number5 black"></div>
+            <div class="number number4 red"></div>
+            <div class="number number9 black"></div>
+            <div class="number number8 red"></div>
+            <div class="number number7 black"></div>
+            <div class="number number12 red"></div>
+            <div class="number number11 black"></div>
+            <div class="number number10 red"></div>
+            <div class="number number15 black"></div>
+            <div class="number number14 red"></div>
+            <div class="number number13 black"></div>
+            <div class="number number18 red"></div>
+            <div class="number number17 black"></div>
+            <div class="number number16 red"></div>
+            <div class="number number21 black"></div>
+            <div class="number number20 red"></div>
+            <div class="number number19 black"></div>
+            <div class="number number24 red"></div>
+            <div class="number number23 black"></div>
+            <div class="number number22 red"></div>
+            <div class="number number27 black"></div>
+            <div class="number number26 red"></div>
+            <div class="number number25 black"></div>
+            <div class="number number30 red"></div>
+            <div class="number number29 black"></div>
+            <div class="number number28 red"></div>
+            <div class="number number33 black"></div>
+            <div class="number number32 red"></div>
+            <div class="number number31 black"></div>
+            <div class="number number36 red"></div>
+            <div class="number number35 black"></div>
+            <div class="number number34 red"></div>
+            <div class="number bet2to1-1 part"></div>
+            <div class="number bet2to1-2 part"></div>
+            <div class="number bet2to1-3 part"></div>
+            <div class="top-area-overlay">
+              <div class="part line line3 top-row"></div>
+              <div class="part regular regular3 top-row"></div>
+              <div class="part line line6 top-row"></div>
+              <div class="part regular regular6 top-row"></div>
+              <div class="part line line9 top-row"></div>
+              <div class="part regular regular9 top-row"></div>
+              <div class="part line line12 top-row"></div>
+              <div class="part regular regular12 top-row"></div>
+              <div class="part line line15 top-row"></div>
+              <div class="part regular regular15 top-row"></div>
+              <div class="part line line18 top-row"></div>
+              <div class="part regular regular18 top-row"></div>
+              <div class="part line line21 top-row"></div>
+              <div class="part regular regular21 top-row"></div>
+              <div class="part line line24 top-row"></div>
+              <div class="part regular regular24 top-row"></div>
+              <div class="part line line27 top-row"></div>
+              <div class="part regular regular27 top-row"></div>
+              <div class="part line line30 top-row"></div>
+              <div class="part regular regular30 top-row"></div>
+              <div class="part line line33 top-row"></div>
+              <div class="part regular regular33 top-row"></div>
+              <div class="part line line36 top-row"></div>
+              <div class="part regular regular36 last top-row"></div>
+              <div class="part corner corner3 line between"></div>
+              <div class="part between between3"></div>
+              <div class="part corner corner6 line between"></div>
+              <div class="part between between6"></div>
+              <div class="part corner corner9 line between"></div>
+              <div class="part between between9"></div>
+              <div class="part corner corner12 line between"></div>
+              <div class="part between between12"></div>
+              <div class="part corner corner15 line between"></div>
+              <div class="part between between15"></div>
+              <div class="part corner corner18 line between"></div>
+              <div class="part between between18"></div>
+              <div class="part corner corner21 line between"></div>
+              <div class="part between between21"></div>
+              <div class="part corner corner24 line between"></div>
+              <div class="part between between24"></div>
+              <div class="part corner corner27 line between"></div>
+              <div class="part between between27"></div>
+              <div class="part corner corner30 line between"></div>
+              <div class="part between between30"></div>
+              <div class="part corner corner33 line between"></div>
+              <div class="part between between33"></div>
+              <div class="part corner corner36 line between"></div>
+              <div class="part last between between36"></div>
+              <div class="part line line2 center"></div>
+              <div class="part regular regular2 center"></div>
+              <div class="part line line5 center"></div>
+              <div class="part regular regular5 center"></div>
+              <div class="part line line8 center"></div>
+              <div class="part regular regular8 center"></div>
+              <div class="part line line11 center"></div>
+              <div class="part regular regular11 center"></div>
+              <div class="part line line14 center"></div>
+              <div class="part regular regular14 center"></div>
+              <div class="part line line17 center"></div>
+              <div class="part regular regular17 center"></div>
+              <div class="part line line20 center"></div>
+              <div class="part regular regular20 center"></div>
+              <div class="part line line23 center"></div>
+              <div class="part regular regular23 center"></div>
+              <div class="part line line26 center"></div>
+              <div class="part regular regular26 center"></div>
+              <div class="part line line29 center"></div>
+              <div class="part regular regular29 center"></div>
+              <div class="part line line32 center"></div>
+              <div class="part regular regular32 center"></div>
+              <div class="part line line35 center"></div>
+              <div class="part regular regular35 last center"></div>
+              <div class="part corner corner2 line between"></div>
+              <div class="part between between2"></div>
+              <div class="part corner corner5 line between"></div>
+              <div class="part between between5"></div>
+              <div class="part corner corner8 line between"></div>
+              <div class="part between between8"></div>
+              <div class="part corner corner11 line between"></div>
+              <div class="part between between11"></div>
+              <div class="part corner corner14 line between"></div>
+              <div class="part between between14"></div>
+              <div class="part corner corner17 line between"></div>
+              <div class="part between between17"></div>
+              <div class="part corner corner20 line between"></div>
+              <div class="part between between20"></div>
+              <div class="part corner corner23 line between"></div>
+              <div class="part between between23"></div>
+              <div class="part corner corner26 line between"></div>
+              <div class="part between between26"></div>
+              <div class="part corner corner29 line between"></div>
+              <div class="part between between29"></div>
+              <div class="part corner corner32 line between"></div>
+              <div class="part between between32"></div>
+              <div class="part corner corner35 line between"></div>
+              <div class="part last between between35"></div>
+              <div class="part center line line1"></div>
+              <div class="part center regular regular1"></div>
+              <div class="part center line line4"></div>
+              <div class="part center regular regular4"></div>
+              <div class="part center line line7"></div>
+              <div class="part center regular regular7"></div>
+              <div class="part center line line10"></div>
+              <div class="part center regular regular10"></div>
+              <div class="part center line line13"></div>
+              <div class="part center regular regular13"></div>
+              <div class="part center line line16"></div>
+              <div class="part center regular regular16"></div>
+              <div class="part center line line19"></div>
+              <div class="part center regular regular19"></div>
+              <div class="part center line line22"></div>
+              <div class="part center regular regular22"></div>
+              <div class="part center line line25"></div>
+              <div class="part center regular regular25"></div>
+              <div class="part center line line28"></div>
+              <div class="part center regular regular28"></div>
+              <div class="part center line line31"></div>
+              <div class="part center regular regular31"></div>
+              <div class="part center line line34"></div>
+              <div class="part center regular regular34 last"></div>
+              <div class="part corner corner1 line between"></div>
+              <div class="part between between1"></div>
+              <div class="part corner corner4 line between"></div>
+              <div class="part between between4"></div>
+              <div class="part corner corner7 line between"></div>
+              <div class="part between between7"></div>
+              <div class="part corner corner10 line between"></div>
+              <div class="part between between10"></div>
+              <div class="part corner corner13 line between"></div>
+              <div class="part between between13"></div>
+              <div class="part corner corner16 line between"></div>
+              <div class="part between between16"></div>
+              <div class="part corner corner19 line between"></div>
+              <div class="part between between19"></div>
+              <div class="part corner corner22 line between"></div>
+              <div class="part between between22"></div>
+              <div class="part corner corner25 line between"></div>
+              <div class="part between between25"></div>
+              <div class="part corner corner28 line between"></div>
+              <div class="part between between28"></div>
+              <div class="part corner corner31 line between"></div>
+              <div class="part between between31"></div>
+              <div class="part corner corner34 line between"></div>
+              <div class="part last between between34"></div>
+            </div>
+          </div>
+          <div class="bottom-area">
+            <div class="bottom-column bottom-column1 column-1st12 part"></div>
+            <div class="bottom-column bottom-column2 column-2nd12 part"></div>
+            <div class="bottom-column bottom-column3 column-3rd12 part"></div>
+            <div class="bottom-column bottom-column4 column-1to18 part"></div>
+
+            <div class="bottom-column bottom-column5 column-even part"></div>
+            <div class="bottom-column bottom-column6 column-red part"></div>
+            <div class="bottom-column bottom-column7 column-black part"></div>
+            <div class="bottom-column bottom-column8 column-odd part"></div>
+            <div class="bottom-column bottom-column9 column-19to36 part"></div>
+          </div>
+        </div>
+        <div class="selections-container">
+          <div class="betting-chips-container">
+            <div class="betting-chip betting-chip-menu betting-chip-menu5 betting-chip5" id="chip5">5</div>
+            <div class="betting-chip betting-chip-menu betting-chip-menu10 betting-chip10" id="chip10">10</div>
+            <div class="betting-chip betting-chip-menu betting-chip-menu20 betting-chip20" id="chip20">20</div>
+            <div class="betting-chip betting-chip-menu betting-chip-menu50 betting-chip50" id="chip50">50</div>
+            <div class="betting-chip betting-chip-menu betting-chip-menu100 betting-chip100" id="chip100">100</div>
+            <div class="betting-chip betting-chip-menu betting-chip-menu200 betting-chip200" id="chip200">200</div>
+          </div>
+          <div class="menu-container">
+            <div class="button button-spin">
+              <div class="circle">
+                <i class="fas fa-play icon"></i>
+              </div>
+              <div class="circle-overlay"></div>
+              <div class="button-text">SPIN</div>
+            </div>
+            <div class="button button-reset">
+              <div class="circle">
+                <i class="fas fa-plus icon"></i>
+              </div>
+              <div class="circle-overlay"></div>
+
+              <div class="button-text">RESET</div>
+            </div>
+            <div class="button button-sound">
+              <div class="circle">
+                <i class="fas fa-volume-up icon icon1"></i>
+                <div class="cross-line"></div>
+              </div>
+              <div class="circle-overlay"></div>
+
+              <div class="button-text">SOUNDS</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="money-container">
+          <div class="cash-area area">
+            <div class="text"><span>CASH</span> $</div>
+            <div class="cash-total"></div>
+          </div>
+          <div class="bet-area area">
+            <div class="text"><span>BET</span> $</div>
+            <div class="bet-total">0.00</div>
+          </div>
+        </div>
+
+        <!-- Alert messages start ---------------------------------------------------------------->
+        <div class="alert-message-container alert-bets">
+          <div class="alert-message">PLEASE PLACE YOUR BETS</div>
+        </div>
+
+        <div class="alert-message-container alert-money">
+          <div class="alert-message">NOT ENOUGH MONEY</div>
+        </div>
+
+        <div class="alert-message-container alert-max-bet">
+          <div class="alert-message">YOU SHOULD NOT EXCEED MAXIMUM BET OF $1000</div>
+        </div>
+
+        <div class="alert-message-container alert-spin-result">
+          <div class="results">
+            <div class="odd-even text">ODD</div>
+            <div class="high-low text">HIGH</div>
+            <div class="roll-number text">26</div>
+            <div class="win-lose text">WIN</div>
+            <div class="win-amount text">100</div>
+          </div>
+        </div>
+
+        <div class="alert-message-container alert-game-over">
+          <div class="alert-message">
+            <div class="text text1">
+              YOU ARE OUT OF MONEY.
+            </div>
+            <div class="text text2">
+              WOULD YOU LIKE TO PLAY AGAIN?
+            </div>
+            <div class="answers">
+              <div class="answer answer-no">NO</div>
+              <div class="answer answer-yes">YES</div>
+            </div>
+          </div>
+        </div>
+        <!-- Alert messages end ---------------------------------------------------------------->
+      </div>
+    </div>
+
+    <!-- Script Source -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

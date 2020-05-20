@@ -1,0 +1,968 @@
+//Global values start
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --scroll-bar-width: 17px;
+  --global-gold-color: rgb(255, 166, 0);
+}
+
+img {
+  display: block;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+label,
+input,
+textarea {
+  font-family: "Barlow", Helvetica, Sans-Serif;
+  font-size: 1.1rem;
+}
+
+input {
+  font-weight: 200;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Barlow", Helvetica, Sans-Serif;
+  font-weight: 200;
+  font-size: 1.1rem;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterColumn {
+  @include flexCenter();
+  flex-direction: column;
+}
+
+@mixin flexCenterBetween {
+  @include flexCenter();
+  justify-content: space-between;
+}
+
+@mixin paddingTopBottom {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  @media only screen and (max-width: 414px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+//Global values end
+
+//Website body start
+.website-wrapper {
+  width: 100%;
+  position: relative;
+  @include flexCenterColumn();
+  overflow: hidden;
+}
+
+.roulette-table {
+  @include flexCenterColumn();
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 173, 0);
+  .top-bar {
+    position: relative;
+    @include flexCenterBetween();
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    color: white;
+    padding: 0 2rem;
+    border-bottom: 3px solid var(--global-gold-color);
+    .roulette-rolls-container {
+      position: relative;
+      @include flexCenterBetween();
+      border: 3px solid var(--global-gold-color);
+      background: linear-gradient(to bottom, rgb(37, 37, 37) 0%, rgb(88, 88, 88) 100%);
+      border-radius: 1rem;
+      //overflow: hidden;
+      .roll {
+        @include flexCenter();
+        height: 3rem;
+        width: 3rem;
+        border-right: 1px solid rgb(0, 0, 0);
+        border-left: 1px solid rgb(80, 80, 80);
+        color: white;
+        font-size: 2rem;
+        font-weight: 400;
+      }
+      .roll1 {
+        border-right: 1px solid transparent;
+        border-radius: 0 0.8rem 0.8rem 0;
+      }
+      .roll5 {
+        border-radius: 0.8rem 0 0 0.8rem;
+      }
+      .roll-last {
+        position: absolute;
+        border: 5px solid var(--global-gold-color);
+        border-radius: 0 1rem 1rem 0;
+        transform: scale(1.2);
+        right: -2px;
+      }
+    }
+    .game-name {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      font-size: 4rem;
+      font-weight: 500;
+      color: var(--global-gold-color);
+    }
+    .min-max-bet {
+      @include flexCenterBetween();
+      font-size: 1.7rem;
+      font-weight: 500;
+      .min-bet {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .roulette-wheel-container {
+    position: absolute;
+    @include flexCenter();
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0);
+    transition: 1s background-color ease;
+    z-index: -1;
+    .roulette-wheel {
+      transform: scale(0.01);
+      width: 35vw;
+      height: 35vw;
+      transition: 1s transform ease;
+      .roulette-image {
+        position: absolute;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .roulette-wheel-main {
+        background-image: url(../images/roulette-wheel.png);
+        transition: 1s transform ease;
+        filter: drop-shadow(3px 3px 20px rgb(0, 0, 0));
+      }
+
+      .roulette-center {
+        background-image: url(../images/roulette-wheel-center.png);
+      }
+      .roulette-cross-shadow {
+        left: 2%;
+        top: 2%;
+        background-image: url(../images/roulette-wheel-cross-shadow.png);
+      }
+      .roulette-cross {
+        background-image: url(../images/roulette-wheel-cross.png);
+      }
+
+      .roulette-wheel-spin {
+        animation: roulette-wheel-animation 5s forwards ease-out;
+      }
+
+      .number-glow-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        .number-glow {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-image: url(../images/roulette-number-glow.png);
+          background-size: cover;
+          background-position: center;
+        }
+      }
+      .ball-container {
+        position: absolute;
+        @include flexCenter();
+        height: 100%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        .ball-spinner {
+          @include flexCenter();
+          align-items: flex-start;
+          height: 63%;
+          width: 10%;
+          animation: ball-container-animation 5s forwards ease-out;
+          .ball {
+            height: 1.5rem;
+            width: 1.5rem;
+            height: 7%;
+            width: 45%;
+            background-image: url(../images/roulette-ball.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            animation: ball-animation 5s forwards ease-out;
+          }
+        }
+      }
+
+      @keyframes roulette-wheel-animation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes ball-animation {
+        0% {
+          transform: translateY(-500%);
+        }
+        40% {
+          transform: translateY(-450%);
+        }
+        62% {
+          transform: translateY(-120%);
+        }
+        65% {
+          transform: translateY(-220%);
+        }
+        68% {
+          transform: translateY(-70%);
+        }
+        71% {
+          transform: translateY(-140%);
+        }
+        74% {
+          transform: translateY(-40%);
+        }
+        77% {
+          transform: translateY(-100%);
+        }
+        80% {
+          transform: translateY(-25%);
+        }
+        83% {
+          transform: translateY(-60%);
+        }
+        86% {
+          transform: translateY(65%);
+        }
+        89% {
+          transform: translateY(10%);
+        }
+        92% {
+          transform: translateY(65%);
+        }
+        95% {
+          transform: translateY(30%);
+        }
+
+        100% {
+          transform: translateY(40%);
+        }
+      }
+    }
+  }
+  .roulette-wheel-visible {
+    background-color: rgba($color: #000000, $alpha: 0.6) !important;
+    .roulette-wheel {
+      transform: scale(1) !important;
+    }
+  }
+
+  .z-index-visible {
+    opacity: 1 !important;
+    z-index: 3 !important;
+  }
+  .betting-area {
+    @include flexCenterColumn();
+    align-items: flex-start;
+    width: 75vw;
+    height: 29vw;
+    background-image: url(../images/roulette-table.png);
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 2px;
+    .betting-chip {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+    .top-area {
+      position: relative;
+      @include flexCenterColumn();
+      align-items: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 63.9%;
+      .number {
+        position: relative;
+        height: calc(100% / 3);
+        width: calc((100% - 9.55%) / 13);
+        transition: 0.3s all ease;
+      }
+      .number0 {
+        height: 100%;
+        width: 9.55%;
+      }
+      .top-area-overlay {
+        position: absolute;
+        @include flexCenterBetween();
+        align-items: flex-start;
+        flex-wrap: wrap;
+        top: 0em;
+        right: 6.8%;
+        height: 104%;
+        width: 84.8%;
+        z-index: 2;
+        .part {
+          position: relative;
+          height: calc((100% - 24%) / 3);
+          height: 28%;
+          width: calc((100% - 9.5%) / 11 - 2.5%);
+          width: 5.73%;
+        }
+        .line {
+          width: 2.5%;
+        }
+        .last {
+          width: 6.9%;
+          .betting-chip {
+            left: 40%;
+          }
+        }
+        .between {
+          height: 8%;
+        }
+        .center {
+          height: calc(((100% - 24%) / 3) - 4%);
+          height: 24%;
+        }
+        .top-row {
+          .betting-chip {
+            top: 60%;
+          }
+        }
+      }
+    }
+    .bottom-area {
+      @include flexCenterBetween();
+      flex-wrap: wrap;
+      width: 83.5%;
+      height: 36.1%;
+      margin-left: 9.6%;
+      .bottom-column {
+        position: relative;
+        width: calc(100% / 6.01);
+        height: 55%;
+        transition: 0.3s background-color ease;
+      }
+      .bottom-column1,
+      .bottom-column2,
+      .bottom-column3 {
+        width: calc(100% / 3);
+        height: 45%;
+      }
+    }
+  }
+}
+
+.roll-red {
+  background-color: red !important;
+}
+.roll-black {
+  background-color: black !important;
+}
+.roll-green {
+  background-color: green !important;
+}
+
+.betting-chips-container {
+  @include flexCenter();
+  margin-left: 2rem;
+  .betting-chip {
+    position: relative;
+    transform: translate(0, 0);
+    left: 0;
+    top: 0;
+    width: 7rem;
+    height: 7rem;
+    margin-right: 1.5rem;
+    font-size: 1.8rem;
+    filter: drop-shadow(0 3px 10px rgb(110, 110, 110));
+    border: 4px solid rgba($color: #ffffff, $alpha: 0);
+  }
+}
+
+.betting-chip {
+  @include flexCenter();
+  width: 3rem;
+  height: 3rem;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: 500;
+  border-radius: 8rem;
+  cursor: pointer;
+  transition: 0.2s all ease;
+  outline: none;
+}
+.betting-chip5 {
+  background-image: url(../images/chips-5.png);
+}
+.betting-chip10 {
+  background-image: url(../images/chips-10.png);
+}
+.betting-chip20 {
+  background-image: url(../images/chips-20.png);
+}
+.betting-chip50 {
+  background-image: url(../images/chips-50.png);
+}
+.betting-chip100 {
+  background-image: url(../images/chips-100.png);
+}
+.betting-chip200 {
+  background-image: url(../images/chips-200.png);
+}
+
+.betting-chip-shadow {
+  filter: drop-shadow(3px 3px 5px rgb(66, 66, 66));
+}
+
+.white-area {
+  background-color: rgba($color: #ffffff, $alpha: 0.5) !important;
+}
+
+.active-chip {
+  filter: drop-shadow(0 3px 10px rgb(255, 255, 255)) !important;
+  border: 4px solid rgba($color: #ffffff, $alpha: 1) !important;
+  transform: scale(1.1) !important;
+}
+
+.selections-container {
+  @include flexCenterBetween();
+  width: 100%;
+  margin-bottom: 1rem;
+}
+//Menu container start
+.menu-container {
+  @include flexCenter();
+  justify-content: flex-start;
+  height: 4rem;
+  background-color: black;
+  border: 3px solid var(--global-gold-color);
+  border-radius: 3rem 0 0 3rem;
+  border-right: none;
+  padding-left: 2rem;
+  .button {
+    position: relative;
+    @include flexCenterColumn();
+    margin-right: 2rem;
+    transform: translateY(-8%);
+    cursor: pointer;
+    .circle {
+      @include flexCenter();
+      height: 7rem;
+      width: 7rem;
+      border-radius: 4rem;
+      background-image: radial-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 55%, rgb(163, 163, 163) 80%);
+      color: var(--global-gold-color);
+      color: white;
+      border: 3px solid var(--global-gold-color);
+      font-size: 2rem;
+      transition: 0.2s all ease;
+      .cross-line {
+        position: absolute;
+        display: none;
+        width: 6px;
+        height: 100%;
+        background-color: var(--global-gold-color);
+        transform: rotate(45deg);
+      }
+      .cross-line-display {
+        display: block;
+      }
+    }
+    .circle-overlay {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 3rem;
+    }
+    .button-text {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 110%;
+      left: 50%;
+      font-size: 1.3rem;
+      font-weight: 500;
+      padding: 0.3rem 1rem;
+      background-color: black;
+      color: var(--global-gold-color);
+      color: white;
+
+      border: 3px solid var(--global-gold-color);
+      border-radius: 1rem;
+      z-index: 1;
+    }
+  }
+  .button-reset {
+    .icon {
+      transform: rotate(45deg);
+      font-size: 2.7rem;
+    }
+  }
+}
+//Menu container end
+
+//Money container start
+.money-container {
+  position: relative;
+  border-top: 3px solid var(--global-gold-color);
+  @include flexCenterBetween();
+  width: 100%;
+  height: 5rem;
+  background-color: black;
+  user-select: none;
+  padding: 0 2rem;
+  .area {
+    @include flexCenterBetween();
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    .text {
+      span {
+        color: var(--global-gold-color);
+      }
+    }
+  }
+}
+//Money container end
+
+//Alert messages start
+.alert-message-container {
+  position: absolute;
+  @include flexCenter();
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  user-select: none;
+  .alert-message {
+    @include flexCenter();
+    background-color: black;
+    padding: 3rem 5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--global-gold-color);
+    border-radius: 1rem;
+    border: 3px solid var(--global-gold-color);
+  }
+}
+
+.alert-spin-result {
+  justify-content: flex-end;
+  .results {
+    margin-right: 10%;
+    @include flexCenterBetween();
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 1rem 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    border-radius: 1rem;
+    border: 3px solid var(--global-gold-color);
+    width: 15rem;
+    height: 20rem;
+    opacity: 0;
+    transition: 0.75s opacity ease;
+    .text {
+      @include flexCenter();
+      width: 100%;
+    }
+    .odd-even,
+    .high-low {
+      width: auto;
+    }
+    .roll-number {
+      font-size: 8rem;
+      color: white;
+    }
+    .win-lose,
+    .win-amount {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.alert-game-over {
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  .alert-message {
+    @include flexCenterColumn();
+    .text {
+      margin-bottom: 1rem;
+    }
+    .answers {
+      margin-top: 0.5rem;
+      @include flexCenterBetween();
+      width: 100%;
+      .answer {
+        padding: 1rem 2rem;
+        border: 3px solid var(--global-gold-color);
+        border-radius: 1rem;
+        transition: 0.3s all ease;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.alert-message-visible {
+  z-index: 6;
+}
+.alert-message-opacity {
+  opacity: 1 !important;
+}
+//Alert messages end
+//Website body end
+
+@media only screen and (min-width: 1025px) {
+  .betting-chip-menu:hover {
+    transform: scale(1.1) !important;
+  }
+
+  .button:hover {
+    .circle {
+      transform: scale(1.1) !important;
+    }
+  }
+  .answer:hover {
+    background-color: var(--global-gold-color) !important;
+    color: black !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .white-area {
+    background-color: rgba($color: #ffffff, $alpha: 0) !important;
+  }
+
+  .roulette-table {
+    .top-bar {
+      padding: 0 1rem;
+      .game-name {
+        font-size: 3rem;
+      }
+      .min-max-bet {
+        font-size: 1.5rem;
+      }
+    }
+    .betting-area {
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(90deg);
+      left: 50%;
+      top: 50%;
+      height: 40%;
+      width: 113%;
+      .betting-chip {
+        transform: translate(-50%, -50%) rotate(-90deg) !important;
+      }
+    }
+    .roulette-wheel-container {
+      align-items: flex-start;
+      // z-index: 5;
+      // opacity: 1;
+      .roulette-wheel {
+        margin-top: 13%;
+        // transform: scale(1);
+        top: 10%;
+        width: 40rem;
+        height: 40rem;
+      }
+    }
+    .alert-spin-result {
+      align-items: flex-end;
+      justify-content: center;
+      // z-index: 3;
+      .results {
+        //  opacity: 1;
+        margin: 0;
+        margin-bottom: 13%;
+      }
+    }
+    .selections-container {
+      .betting-chips-container {
+        @include flexCenterColumn();
+        .betting-chip {
+          transform: translate(0, 0) !important;
+          margin: 1rem;
+        }
+      }
+      .menu-container {
+        background-color: transparent;
+        border: none;
+        height: auto;
+        width: auto;
+        margin-right: 3rem;
+        @include flexCenterColumn();
+        .button {
+          margin: 2rem 0;
+          transform: translateY(0);
+        }
+      }
+    }
+    .money-container {
+      padding: 0 1rem;
+      .area {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .roulette-table {
+    .top-bar {
+      .roulette-rolls-container {
+        border-radius: 0.75rem;
+        .roll {
+          height: 2.4rem;
+          width: 2.4rem;
+          font-size: 1.5rem;
+        }
+        .roll-last {
+          transform: scale(1.3);
+        }
+      }
+
+      .game-name {
+        font-size: 2.5rem;
+      }
+      .min-max-bet {
+        @include flexCenterColumn();
+        align-items: flex-end;
+        font-size: 1.5rem;
+        .min-bet {
+          margin: 0;
+        }
+      }
+    }
+    .betting-area {
+      height: 38%;
+      width: 108%;
+      .betting-chip {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+    .roulette-wheel-container {
+      //z-index: 5;
+      // opacity: 1;
+      .roulette-wheel {
+        margin-top: 3%;
+        // transform: scale(1);
+        top: 10%;
+        width: 35rem;
+        height: 35rem;
+      }
+    }
+    .alert-spin-result {
+      // z-index: 3;
+      .results {
+        //   opacity: 1;
+        margin: 0;
+        margin-bottom: 3%;
+      }
+    }
+    .selections-container {
+      .betting-chips-container {
+        .betting-chip {
+          margin: 0.5rem;
+          height: 6rem;
+          width: 6rem;
+        }
+      }
+      .menu-container {
+        margin-right: 2rem;
+        .button {
+          .circle {
+            height: 6rem;
+            width: 6rem;
+          }
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .roulette-table {
+    .top-bar {
+      flex-wrap: wrap;
+      height: auto;
+      padding: 0.5rem 1rem;
+      padding-top: 0;
+      .roulette-rolls-container {
+        order: 2;
+        border-radius: 0.75rem;
+        .roll {
+          height: 2rem;
+          width: 2rem;
+          font-size: 1.2rem;
+        }
+      }
+      .game-name {
+        order: 1;
+        position: relative;
+        @include flexCenter();
+        font-size: 2rem;
+        top: 25%;
+        width: 100%;
+        border-bottom: 3px solid var(--global-gold-color);
+        padding-bottom: 0.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .min-max-bet {
+        order: 3;
+        font-size: 1.2rem;
+      }
+    }
+    .betting-area {
+      top: 54.5%;
+      height: 38%;
+      width: 133%;
+      .betting-chip {
+        height: 1.7rem;
+        width: 1.7rem;
+        font-size: 0.8rem;
+      }
+    }
+    .roulette-wheel-container {
+      // z-index: 5;
+      // opacity: 1;
+      .roulette-wheel {
+        // transform: scale(1);
+        margin-top: 7%;
+        top: 10%;
+        width: 22rem;
+        height: 22rem;
+      }
+    }
+    .alert-spin-result {
+      // z-index: 3;
+      .results {
+        //opacity: 1;
+        height: 16rem;
+        width: 13rem;
+        margin: 0;
+        margin-bottom: 7%;
+        .text {
+          font-size: 2rem;
+        }
+        .roll-number {
+          padding: 0;
+          font-size: 6rem;
+          line-height: 5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    .selections-container {
+      .betting-chips-container {
+        margin-left: 0.2rem;
+        .betting-chip {
+          margin: 0.2rem;
+          height: 3rem;
+          width: 3rem;
+          font-size: 1.2rem;
+        }
+      }
+      .menu-container {
+        margin-right: 0.2rem;
+        .button {
+          margin: 0.2rem 0;
+          .circle {
+            height: 3rem;
+            width: 3rem;
+            font-size: 1.3rem;
+          }
+          .button-text {
+            font-size: 1rem;
+            display: none;
+          }
+        }
+        .button-reset {
+          .circle {
+            .icon {
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+    }
+    .money-container {
+      height: 3rem;
+      padding: 0 1rem;
+      .area {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .active-chip {
+    filter: drop-shadow(0 0px 3px rgb(255, 255, 255)) !important;
+    border: 2px solid rgba($color: #ffffff, $alpha: 1) !important;
+  }
+}
