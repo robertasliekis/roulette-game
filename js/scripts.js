@@ -19,8 +19,8 @@ var ambientSound = new Audio("sounds/ambient-sounds.mp3");
 var backgroundMusic = new Audio("sounds/background-music.mp3");
 
 $(".website-wrapper").click(function () {
-  //ambientSound.play();
-  // backgroundMusic.play();
+  ambientSound.play();
+  backgroundMusic.play();
 });
 
 ambientSound.loop = true;
