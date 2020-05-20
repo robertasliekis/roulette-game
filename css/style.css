@@ -1150,13 +1150,11 @@ body {
     font-size: 1.5rem;
   }
   .roulette-table .betting-area {
-    position: absolute;
-    -webkit-transform: translate(-50%, -50%) rotate(90deg);
-            transform: translate(-50%, -50%) rotate(90deg);
-    left: 50%;
-    top: 50%;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     height: 40%;
     width: 113%;
+    z-index: 2;
   }
   .roulette-table .betting-area .betting-chip {
     -webkit-transform: translate(-50%, -50%) rotate(-90deg) !important;
@@ -1184,6 +1182,14 @@ body {
   .roulette-table .alert-spin-result .results {
     margin: 0;
     margin-bottom: 13%;
+  }
+  .roulette-table .selections-container {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 1;
   }
   .roulette-table .selections-container .betting-chips-container {
     display: -webkit-box;
@@ -1319,7 +1325,7 @@ body {
   .roulette-table .top-bar {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    height: auto;
+    height: 7rem;
     padding: 0.5rem 1rem;
     padding-top: 0;
   }
@@ -1362,9 +1368,8 @@ body {
     font-size: 1.2rem;
   }
   .roulette-table .betting-area {
-    top: 54.5%;
     height: 38%;
-    width: 129%;
+    width: 100%;
   }
   .roulette-table .betting-area .betting-chip {
     height: 1.7rem;
@@ -1391,6 +1396,9 @@ body {
     font-size: 6rem;
     line-height: 5rem;
     margin-bottom: 0.5rem;
+  }
+  .roulette-table .selections-container {
+    top: 55%;
   }
   .roulette-table .selections-container .betting-chips-container {
     margin-left: 0.2rem;

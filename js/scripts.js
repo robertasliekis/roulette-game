@@ -4,7 +4,30 @@ if (window.innerWidth <= 1024) {
 
 window.addEventListener("resize", () => {
   $(".website-wrapper").height(window.innerHeight);
+
+  if (window.innerWidth > 1024) {
+    $(".betting-area").width(window.innerWidth - 250);
+  }
+
+  if (window.innerWidth > 414 && window.innerWidth <= 1024) {
+    $(".betting-area").width(window.innerHeight - 208);
+  }
+
+  if (window.innerWidth <= 414) {
+    $(".betting-area").width(window.innerHeight - 192);
+  }
 });
+if (window.innerWidth > 1024) {
+  $(".betting-area").width(window.innerWidth - 250);
+}
+
+if (window.innerWidth > 414 && window.innerWidth <= 1024) {
+  $(".betting-area").width(window.innerHeight - 208);
+}
+
+if (window.innerWidth <= 414) {
+  $(".betting-area").width(window.innerHeight - 192);
+}
 
 var rouletteNumbersRed = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
 
