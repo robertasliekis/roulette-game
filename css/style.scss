@@ -260,10 +260,10 @@ body {
 
       @keyframes ball-animation {
         0% {
-          transform: translateY(-500%);
+          transform: translateY(-450%);
         }
         40% {
-          transform: translateY(-450%);
+          transform: translateY(-380%);
         }
         62% {
           transform: translateY(-120%);
@@ -600,6 +600,7 @@ body {
   user-select: none;
   .alert-message {
     @include flexCenter();
+    text-align: center;
     background-color: black;
     padding: 3rem 5rem;
     font-size: 2rem;
@@ -845,6 +846,13 @@ body {
       }
     }
   }
+
+  .alert-message-container {
+    .alert-message {
+      max-width: 90%;
+      padding: 3rem 3rem;
+    }
+  }
 }
 
 @media only screen and (max-width: 414px) {
@@ -882,7 +890,7 @@ body {
     .betting-area {
       top: 54.5%;
       height: 38%;
-      width: 133%;
+      width: 129%;
       .betting-chip {
         height: 1.7rem;
         width: 1.7rem;
@@ -964,5 +972,12 @@ body {
   .active-chip {
     filter: drop-shadow(0 0px 3px rgb(255, 255, 255)) !important;
     border: 2px solid rgba($color: #ffffff, $alpha: 1) !important;
+  }
+
+  .alert-message-container {
+    .alert-message {
+      padding: 2rem 1rem;
+      font-size: 1.5rem;
+    }
   }
 }

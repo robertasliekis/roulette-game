@@ -376,12 +376,12 @@ body {
 
 @-webkit-keyframes ball-animation {
   0% {
-    -webkit-transform: translateY(-500%);
-            transform: translateY(-500%);
-  }
-  40% {
     -webkit-transform: translateY(-450%);
             transform: translateY(-450%);
+  }
+  40% {
+    -webkit-transform: translateY(-380%);
+            transform: translateY(-380%);
   }
   62% {
     -webkit-transform: translateY(-120%);
@@ -439,12 +439,12 @@ body {
 
 @keyframes ball-animation {
   0% {
-    -webkit-transform: translateY(-500%);
-            transform: translateY(-500%);
-  }
-  40% {
     -webkit-transform: translateY(-450%);
             transform: translateY(-450%);
+  }
+  40% {
+    -webkit-transform: translateY(-380%);
+            transform: translateY(-380%);
   }
   62% {
     -webkit-transform: translateY(-120%);
@@ -989,6 +989,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   background-color: black;
   padding: 3rem 5rem;
   font-size: 2rem;
@@ -1308,6 +1309,10 @@ body {
     height: 6rem;
     width: 6rem;
   }
+  .alert-message-container .alert-message {
+    max-width: 90%;
+    padding: 3rem 3rem;
+  }
 }
 
 @media only screen and (max-width: 414px) {
@@ -1359,7 +1364,7 @@ body {
   .roulette-table .betting-area {
     top: 54.5%;
     height: 38%;
-    width: 133%;
+    width: 129%;
   }
   .roulette-table .betting-area .betting-chip {
     height: 1.7rem;
@@ -1425,6 +1430,10 @@ body {
     -webkit-filter: drop-shadow(0 0px 3px white) !important;
             filter: drop-shadow(0 0px 3px white) !important;
     border: 2px solid white !important;
+  }
+  .alert-message-container .alert-message {
+    padding: 2rem 1rem;
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
