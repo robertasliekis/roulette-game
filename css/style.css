@@ -1402,7 +1402,7 @@ body {
     margin-left: 0.7rem;
   }
   .roulette-table .selections-container .betting-chips-container .betting-chip {
-    margin: 0.2rem;
+    margin: 0.5rem 0;
     height: 3rem;
     width: 3rem;
     font-size: 1.2rem;
@@ -1411,7 +1411,7 @@ body {
     margin-right: 0.7rem;
   }
   .roulette-table .selections-container .menu-container .button {
-    margin: 0.2rem 0;
+    margin: 0.5rem 0;
   }
   .roulette-table .selections-container .menu-container .button .circle {
     height: 3rem;
