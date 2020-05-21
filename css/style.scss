@@ -322,8 +322,8 @@ body {
   .betting-area {
     @include flexCenterColumn();
     align-items: flex-start;
-    width: 75vw;
-    height: 29vw;
+    // width: 75vw;
+    // height: 29vw;
     background-image: url(../images/roulette-table.png);
     background-position: center;
     background-size: 100% 100%;
@@ -891,7 +891,7 @@ body {
       }
     }
     .betting-area {
-      height: 38%;
+      height: 35%;
       width: 100%;
       .betting-chip {
         height: 1.7rem;

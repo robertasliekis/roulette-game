@@ -1,32 +1,38 @@
 if (window.innerWidth <= 1024) {
-  $(".website-wrapper").height(window.innerHeight);
+  // $(".website-wrapper").height(window.innerHeight);
 }
 
 window.addEventListener("resize", () => {
-  $(".website-wrapper").height(window.innerHeight);
+  //$(".website-wrapper").height(window.innerHeight);
 
   if (window.innerWidth > 1024) {
-    $(".betting-area").width(window.innerWidth - 250);
+    $(".betting-area").width("75%");
+    $(".betting-area").height("55%");
   }
 
   if (window.innerWidth > 414 && window.innerWidth <= 1024) {
     $(".betting-area").width(window.innerHeight - 208);
+    $(".betting-area").height((window.innerHeight - 192) * 0.45);
   }
 
   if (window.innerWidth <= 414) {
     $(".betting-area").width(window.innerHeight - 192);
+    $(".betting-area").height((window.innerHeight - 192) * 0.45);
   }
 });
 if (window.innerWidth > 1024) {
-  $(".betting-area").width(window.innerWidth - 250);
+  $(".betting-area").width("75%");
+  $(".betting-area").height("55%");
 }
 
 if (window.innerWidth > 414 && window.innerWidth <= 1024) {
   $(".betting-area").width(window.innerHeight - 208);
+  $(".betting-area").height((window.innerHeight - 192) * 0.45);
 }
 
 if (window.innerWidth <= 414) {
   $(".betting-area").width(window.innerHeight - 192);
+  $(".betting-area").height((window.innerHeight - 192) * 0.45);
 }
 
 var rouletteNumbersRed = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];

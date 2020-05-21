@@ -531,8 +531,6 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 75vw;
-  height: 29vw;
   background-image: url(../images/roulette-table.png);
   background-position: center;
   background-size: 100% 100%;
@@ -1368,7 +1366,7 @@ body {
     font-size: 1.2rem;
   }
   .roulette-table .betting-area {
-    height: 38%;
+    height: 35%;
     width: 100%;
   }
   .roulette-table .betting-area .betting-chip {
