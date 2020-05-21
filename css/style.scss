@@ -517,11 +517,14 @@ body {
       border-radius: 4rem;
       background-image: radial-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(86, 133, 141) 75%);
       color: var(--global-gold-color);
-      color: white;
+      color: rgb(255, 255, 255);
       @include goldenBorder();
       //border: 3px solid var(--global-gold-color);
       font-size: 2rem;
       transition: 0.2s all ease;
+      .icon {
+        filter: drop-shadow(0 0 1px rgb(153, 95, 29));
+      }
       .cross-line {
         position: absolute;
         display: none;

@@ -879,6 +879,11 @@ body {
   transition: 0.2s all ease;
 }
 
+.menu-container .button .circle .icon {
+  -webkit-filter: drop-shadow(0 0 1px #995f1d);
+          filter: drop-shadow(0 0 1px #995f1d);
+}
+
 .menu-container .button .circle .cross-line {
   position: absolute;
   display: none;
