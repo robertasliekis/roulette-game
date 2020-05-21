@@ -6,8 +6,8 @@ window.addEventListener("resize", () => {
   $(".website-wrapper").height(window.innerHeight);
 
   if (window.innerWidth > 1024) {
-    $(".betting-area").width("75%");
-    $(".betting-area").height("55%");
+    $(".betting-area").width(window.innerWidth * 0.75);
+    $(".betting-area").height(window.innerWidth * 0.28);
   }
 
   if (window.innerWidth > 414 && window.innerWidth <= 1024) {
@@ -21,8 +21,8 @@ window.addEventListener("resize", () => {
   }
 });
 if (window.innerWidth > 1024) {
-  $(".betting-area").width("75%");
-  $(".betting-area").height("55%");
+  $(".betting-area").width(window.innerWidth * 0.75);
+  $(".betting-area").height(window.innerWidth * 0.28);
 }
 
 if (window.innerWidth > 414 && window.innerWidth <= 1024) {
@@ -56,8 +56,8 @@ var ambientSound = new Audio("sounds/ambient-sounds.mp3");
 var backgroundMusic = new Audio("sounds/background-music.mp3");
 
 $(".website-wrapper").click(function () {
-  ambientSound.play();
-  backgroundMusic.play();
+  // ambientSound.play();
+  // backgroundMusic.play();
 });
 
 ambientSound.loop = true;

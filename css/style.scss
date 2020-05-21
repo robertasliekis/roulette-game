@@ -9,7 +9,7 @@
 
 :root {
   --scroll-bar-width: 17px;
-  --global-gold-color: rgb(255, 166, 0);
+  --global-gold-color: rgb(247, 176, 46);
 }
 
 img {
@@ -79,13 +79,9 @@ body {
   justify-content: space-between;
 }
 
-@mixin paddingTopBottom {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  @media only screen and (max-width: 414px) {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+@mixin goldenBorder {
+  box-shadow: 0 0 0 2px rgb(255, 217, 0), 0 0 0 3px rgb(56, 56, 56), 0 0 0 6px rgb(255, 145, 0);
+  box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 6px rgb(131, 122, 105);
 }
 //Global values end
 
@@ -108,14 +104,16 @@ body {
     @include flexCenterBetween();
     width: 100%;
     height: 5rem;
-    background-color: black;
+    background-color: rgb(32, 32, 32);
     color: white;
     padding: 0 2rem;
-    border-bottom: 3px solid var(--global-gold-color);
+    @include goldenBorder();
+    //  border-bottom: 3px solid var(--global-gold-color);
     .roulette-rolls-container {
       position: relative;
       @include flexCenterBetween();
-      border: 3px solid var(--global-gold-color);
+      //border: 3px solid var(--global-gold-color);
+      @include goldenBorder();
       background: linear-gradient(to bottom, rgb(37, 37, 37) 0%, rgb(88, 88, 88) 100%);
       border-radius: 1rem;
       //overflow: hidden;
@@ -138,10 +136,10 @@ body {
       }
       .roll-last {
         position: absolute;
-        border: 5px solid var(--global-gold-color);
+        @include goldenBorder();
         border-radius: 0 1rem 1rem 0;
-        transform: scale(1.2);
-        right: -2px;
+        transform: scale(1.02);
+        right: 0px;
       }
     }
     .game-name {
@@ -152,6 +150,8 @@ body {
       font-size: 4rem;
       font-weight: 500;
       color: var(--global-gold-color);
+      -webkit-text-stroke: 1px rgb(255, 203, 168);
+      text-shadow: 3px 3px 5px rgb(177, 71, 0);
     }
     .min-max-bet {
       @include flexCenterBetween();
@@ -497,8 +497,10 @@ body {
   @include flexCenter();
   justify-content: flex-start;
   height: 4rem;
-  background-color: black;
-  border: 3px solid var(--global-gold-color);
+  background-color: rgb(44, 58, 77);
+  // border: 3px solid var(--global-gold-color);
+  @include goldenBorder();
+
   border-radius: 3rem 0 0 3rem;
   border-right: none;
   padding-left: 2rem;
@@ -513,10 +515,11 @@ body {
       height: 7rem;
       width: 7rem;
       border-radius: 4rem;
-      background-image: radial-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 55%, rgb(163, 163, 163) 80%);
+      background-image: radial-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(86, 133, 141) 75%);
       color: var(--global-gold-color);
       color: white;
-      border: 3px solid var(--global-gold-color);
+      @include goldenBorder();
+      //border: 3px solid var(--global-gold-color);
       font-size: 2rem;
       transition: 0.2s all ease;
       .cross-line {
@@ -551,9 +554,9 @@ body {
       background-color: black;
       color: var(--global-gold-color);
       color: white;
-
-      border: 3px solid var(--global-gold-color);
-      border-radius: 1rem;
+      // border: 3px solid var(--global-gold-color);
+      @include goldenBorder();
+      border-radius: 0.5rem;
       z-index: 1;
     }
   }
@@ -569,8 +572,9 @@ body {
 //Money container start
 .money-container {
   position: relative;
-  border-top: 3px solid var(--global-gold-color);
+  //border-top: 3px solid var(--global-gold-color);
   @include flexCenterBetween();
+  @include goldenBorder();
   width: 100%;
   height: 5rem;
   background-color: black;
@@ -607,7 +611,7 @@ body {
     font-weight: 500;
     color: var(--global-gold-color);
     border-radius: 1rem;
-    border: 3px solid var(--global-gold-color);
+    @include goldenBorder();
   }
 }
 
@@ -694,6 +698,61 @@ body {
   }
 }
 
+@media only screen and (max-width: 1500px) {
+  .roulette-table {
+    .selections-container {
+      .betting-chips-container {
+        .betting-chip {
+          margin: 0 0.5rem;
+          height: 6rem;
+          width: 6rem;
+        }
+      }
+      .menu-container {
+        padding-left: 1rem;
+        .button {
+          margin: 0 0.5rem;
+          .circle {
+            height: 6rem;
+            width: 6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .roulette-table {
+    .top-bar {
+      .game-name {
+        font-size: 3rem;
+      }
+    }
+    .selections-container {
+      .betting-chips-container {
+        .betting-chip {
+          margin: 0 0.2rem;
+          height: 5.5rem;
+          width: 5.5rem;
+        }
+      }
+      .menu-container {
+        .button {
+          margin: 0 0.5rem;
+          .circle {
+            height: 5.5rem;
+            width: 5.5rem;
+          }
+          .button-text {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .white-area {
     background-color: rgba($color: #ffffff, $alpha: 0) !important;
@@ -720,11 +779,8 @@ body {
     }
     .roulette-wheel-container {
       align-items: flex-start;
-      // z-index: 5;
-      // opacity: 1;
       .roulette-wheel {
         margin-top: 13%;
-        // transform: scale(1);
         top: 10%;
         width: 40rem;
         height: 40rem;
@@ -733,9 +789,7 @@ body {
     .alert-spin-result {
       align-items: flex-end;
       justify-content: center;
-      // z-index: 3;
       .results {
-        //  opacity: 1;
         margin: 0;
         margin-bottom: 13%;
       }
@@ -745,21 +799,26 @@ body {
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
+      height: 100%;
+      width: 100%;
       z-index: 1;
+      padding: 0 6%;
       .betting-chips-container {
         @include flexCenterColumn();
+        height: auto;
+        margin: 0;
         .betting-chip {
           transform: translate(0, 0) !important;
-          margin: 1rem;
+          margin: 0.3rem 0;
         }
       }
       .menu-container {
+        box-shadow: none;
+        @include flexCenterColumn();
         background-color: transparent;
         border: none;
         height: auto;
         width: auto;
-        margin-right: 3rem;
-        @include flexCenterColumn();
         .button {
           margin: 2rem 0;
           transform: translateY(0);
@@ -785,9 +844,6 @@ body {
           width: 2.4rem;
           font-size: 1.5rem;
         }
-        .roll-last {
-          transform: scale(1.3);
-        }
       }
 
       .game-name {
@@ -811,41 +867,17 @@ body {
       }
     }
     .roulette-wheel-container {
-      //z-index: 5;
-      // opacity: 1;
       .roulette-wheel {
         margin-top: 3%;
-        // transform: scale(1);
         top: 10%;
         width: 35rem;
         height: 35rem;
       }
     }
     .alert-spin-result {
-      // z-index: 3;
       .results {
-        //   opacity: 1;
         margin: 0;
         margin-bottom: 3%;
-      }
-    }
-    .selections-container {
-      .betting-chips-container {
-        .betting-chip {
-          margin: 0.5rem;
-          height: 6rem;
-          width: 6rem;
-        }
-      }
-      .menu-container {
-        margin-right: 2rem;
-        .button {
-          .circle {
-            height: 6rem;
-            width: 6rem;
-          }
-          margin: 2rem 0;
-        }
       }
     }
   }
@@ -873,6 +905,9 @@ body {
           width: 2rem;
           font-size: 1.2rem;
         }
+        .roll-last {
+          border-radius: 0 0.5rem 0.5rem 0;
+        }
       }
       .game-name {
         order: 1;
@@ -884,6 +919,8 @@ body {
         border-bottom: 3px solid var(--global-gold-color);
         padding-bottom: 0.2rem;
         margin-bottom: 0.5rem;
+        -webkit-text-stroke: 1px rgb(255, 203, 168);
+        text-shadow: 2px 2px 3px rgb(177, 71, 0);
       }
       .min-max-bet {
         order: 3;
@@ -900,10 +937,7 @@ body {
       }
     }
     .roulette-wheel-container {
-      // z-index: 5;
-      // opacity: 1;
       .roulette-wheel {
-        // transform: scale(1);
         margin-top: 7%;
         top: 10%;
         width: 22rem;
@@ -911,9 +945,7 @@ body {
       }
     }
     .alert-spin-result {
-      // z-index: 3;
       .results {
-        //opacity: 1;
         height: 16rem;
         width: 13rem;
         margin: 0;
@@ -931,8 +963,8 @@ body {
     }
     .selections-container {
       top: 55%;
+      padding: 0 3.5%;
       .betting-chips-container {
-        margin-left: 0.7rem;
         .betting-chip {
           margin: 0.4rem 0;
           height: 3rem;
@@ -941,7 +973,6 @@ body {
         }
       }
       .menu-container {
-        margin-right: 0.7rem;
         .button {
           margin: 0.5rem 0;
           .circle {
@@ -981,6 +1012,67 @@ body {
     .alert-message {
       padding: 2rem 1rem;
       font-size: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .roulette-table {
+    .top-bar {
+      height: 6rem;
+      .roulette-rolls-container {
+        border-radius: 0.5rem;
+        .roll {
+          height: 1.5rem;
+          width: 1.5rem;
+          font-size: 1rem;
+        }
+      }
+      .game-name {
+        font-size: 1.5rem;
+      }
+      .min-max-bet {
+        font-size: 1rem;
+      }
+    }
+    .betting-area {
+      .betting-chip {
+        height: 1.4rem;
+        width: 1.4rem;
+        font-size: 0.7rem;
+      }
+    }
+    .selections-container {
+      .betting-chips-container {
+        .betting-chip {
+          margin: 0.3rem 0;
+          height: 2.6rem;
+          width: 2.6rem;
+          font-size: 1rem;
+        }
+      }
+      .menu-container {
+        .button {
+          .circle {
+            height: 2.8rem;
+            width: 2.8rem;
+            font-size: 1.1rem;
+          }
+        }
+        .button-reset {
+          .circle {
+            .icon {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+    .money-container {
+      height: 2rem;
+      .area {
+        font-size: 1rem;
+      }
     }
   }
 }
