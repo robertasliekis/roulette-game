@@ -187,9 +187,7 @@ body {
   -webkit-box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 5px #837a69;
           box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 5px #837a69;
   border-radius: 0 1rem 1rem 0;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  right: 0px;
+  right: 0;
 }
 
 .roulette-table .top-bar .game-name {
@@ -1505,6 +1503,29 @@ body {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .roulette-table .roulette-wheel-container .roulette-wheel {
+    margin-top: 5%;
+    width: 20rem;
+    height: 20rem;
+  }
+  .roulette-table .alert-spin-result .results {
+    height: 14rem;
+    width: 12rem;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+  .roulette-table .alert-spin-result .results .text {
+    font-size: 1.5rem;
+  }
+  .roulette-table .alert-spin-result .results .roll-number {
+    padding: 0;
+    font-size: 5rem;
+    line-height: 5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
 @media only screen and (max-width: 320px) {
   .roulette-table .top-bar {
     height: 6rem;
@@ -1522,6 +1543,10 @@ body {
   }
   .roulette-table .top-bar .min-max-bet {
     font-size: 1rem;
+  }
+  .roulette-table .roulette-wheel-container .roulette-wheel {
+    width: 18rem;
+    height: 18rem;
   }
   .roulette-table .betting-area .betting-chip {
     height: 1.4rem;
