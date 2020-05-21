@@ -81,7 +81,7 @@ body {
 
 @mixin goldenBorder {
   box-shadow: 0 0 0 2px rgb(255, 217, 0), 0 0 0 3px rgb(56, 56, 56), 0 0 0 6px rgb(255, 145, 0);
-  box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 6px rgb(131, 122, 105);
+  box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 5px rgb(131, 122, 105);
 }
 //Global values end
 
@@ -150,13 +150,15 @@ body {
       font-size: 4rem;
       font-weight: 500;
       color: var(--global-gold-color);
-      -webkit-text-stroke: 1px rgb(255, 203, 168);
-      text-shadow: 3px 3px 5px rgb(177, 71, 0);
+      text-shadow: 2px 2px 4px rgb(177, 71, 0);
     }
     .min-max-bet {
       @include flexCenterBetween();
       font-size: 1.7rem;
       font-weight: 500;
+      .text-color {
+        color: var(--global-gold-color);
+      }
       .min-bet {
         margin-right: 1rem;
       }
@@ -667,7 +669,8 @@ body {
       width: 100%;
       .answer {
         padding: 1rem 2rem;
-        border: 3px solid var(--global-gold-color);
+        @include goldenBorder();
+
         border-radius: 1rem;
         transition: 0.3s all ease;
         cursor: pointer;
@@ -909,7 +912,7 @@ body {
           font-size: 1.2rem;
         }
         .roll-last {
-          border-radius: 0 0.5rem 0.5rem 0;
+          border-radius: 0 0.75rem 0.75rem 0;
         }
       }
       .game-name {
@@ -922,8 +925,7 @@ body {
         border-bottom: 3px solid var(--global-gold-color);
         padding-bottom: 0.2rem;
         margin-bottom: 0.5rem;
-        -webkit-text-stroke: 1px rgb(255, 203, 168);
-        text-shadow: 2px 2px 3px rgb(177, 71, 0);
+        text-shadow: 1px 1px 2px rgb(177, 71, 0);
       }
       .min-max-bet {
         order: 3;
