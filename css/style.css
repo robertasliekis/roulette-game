@@ -187,7 +187,9 @@ body {
   -webkit-box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 5px #837a69;
           box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 5px #837a69;
   border-radius: 0 0.9rem 0.9rem 0;
-  right: 0;
+  border-right: none;
+  right: 0px;
+  width: 2.9rem;
 }
 
 .roulette-table .top-bar .game-name {
@@ -1401,6 +1403,7 @@ body {
   }
   .roulette-table .top-bar .roulette-rolls-container .roll-last {
     border-radius: 0 0.8rem 0.8rem 0;
+    width: 1.85rem;
   }
   .roulette-table .top-bar .game-name {
     -webkit-box-ordinal-group: 2;
