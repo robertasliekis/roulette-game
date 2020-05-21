@@ -186,7 +186,7 @@ body {
           box-shadow: 0 0 0 2px #ffd900, 0 0 0 3px #383838, 0 0 0 6px #ff9100;
   -webkit-box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 5px #837a69;
           box-shadow: 0 0 0 4px var(--global-gold-color), 0 0 0 5px #837a69;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 0.9rem 0.9rem 0;
   right: 0;
 }
 
@@ -1400,7 +1400,7 @@ body {
     font-size: 1.2rem;
   }
   .roulette-table .top-bar .roulette-rolls-container .roll-last {
-    border-radius: 0 0.75rem 0.75rem 0;
+    border-radius: 0 0.8rem 0.8rem 0;
   }
   .roulette-table .top-bar .game-name {
     -webkit-box-ordinal-group: 2;

@@ -137,7 +137,7 @@ body {
       .roll-last {
         position: absolute;
         @include goldenBorder();
-        border-radius: 0 1rem 1rem 0;
+        border-radius: 0 0.9rem 0.9rem 0;
         right: 0;
       }
     }
@@ -911,7 +911,7 @@ body {
           font-size: 1.2rem;
         }
         .roll-last {
-          border-radius: 0 0.75rem 0.75rem 0;
+          border-radius: 0 0.8rem 0.8rem 0;
         }
       }
       .game-name {

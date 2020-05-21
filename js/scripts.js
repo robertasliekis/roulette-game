@@ -1,9 +1,9 @@
 if (window.innerWidth <= 1024) {
-  $(".website-wrapper").height(window.innerHeight);
+  // $(".website-wrapper").height(window.innerHeight);
 }
 
 window.addEventListener("resize", () => {
-  $(".website-wrapper").height(window.innerHeight);
+  // $(".website-wrapper").height(window.innerHeight);
 
   if (window.innerWidth > 1024) {
     $(".betting-area").width(window.innerWidth * 0.75);
