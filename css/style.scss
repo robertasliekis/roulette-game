@@ -191,21 +191,21 @@ body {
         height: 100%;
       }
       .roulette-wheel-main {
-        background-image: url(../images/roulette-wheel.png);
+        background-image: url(../images/roulette-wheel.webp);
         transition: 1s transform ease;
         filter: drop-shadow(3px 3px 20px rgb(0, 0, 0));
       }
 
       .roulette-center {
-        background-image: url(../images/roulette-wheel-center.png);
+        background-image: url(../images/roulette-wheel-center.webp);
       }
       .roulette-cross-shadow {
         left: 2%;
         top: 2%;
-        background-image: url(../images/roulette-wheel-cross-shadow.png);
+        background-image: url(../images/roulette-wheel-cross-shadow.webp);
       }
       .roulette-cross {
-        background-image: url(../images/roulette-wheel-cross.png);
+        background-image: url(../images/roulette-wheel-cross.webp);
       }
 
       .roulette-wheel-spin {
@@ -220,7 +220,7 @@ body {
           position: absolute;
           height: 100%;
           width: 100%;
-          background-image: url(../images/roulette-number-glow.png);
+          background-image: url(../images/roulette-number-glow.webp);
           background-size: cover;
           background-position: center;
         }
@@ -244,7 +244,7 @@ body {
             width: 1.5rem;
             height: 7%;
             width: 45%;
-            background-image: url(../images/roulette-ball.png);
+            background-image: url(../images/roulette-ball.webp);
             background-repeat: no-repeat;
             background-size: 100% 100%;
             animation: ball-animation 5s forwards ease-out;
@@ -327,7 +327,7 @@ body {
     align-items: flex-start;
     // width: 75vw;
     // height: 29vw;
-    background-image: url(../images/roulette-table.png);
+    background-image: url(../images/roulette-table.webp);
     background-position: center;
     background-size: 100% 100%;
     padding: 2px;
@@ -458,22 +458,22 @@ body {
   outline: none;
 }
 .betting-chip5 {
-  background-image: url(../images/chips-5.png);
+  background-image: url(../images/chips-5.webp);
 }
 .betting-chip10 {
-  background-image: url(../images/chips-10.png);
+  background-image: url(../images/chips-10.webp);
 }
 .betting-chip20 {
-  background-image: url(../images/chips-20.png);
+  background-image: url(../images/chips-20.webp);
 }
 .betting-chip50 {
-  background-image: url(../images/chips-50.png);
+  background-image: url(../images/chips-50.webp);
 }
 .betting-chip100 {
-  background-image: url(../images/chips-100.png);
+  background-image: url(../images/chips-100.webp);
 }
 .betting-chip200 {
-  background-image: url(../images/chips-200.png);
+  background-image: url(../images/chips-200.webp);
 }
 
 .betting-chip-shadow {
