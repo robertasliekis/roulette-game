@@ -280,3 +280,5 @@ function areaBetCheck(columnName, columnNumber, equation, winMultiplier) {
     winAmount = 0;
   }
 }
+
+ambi
