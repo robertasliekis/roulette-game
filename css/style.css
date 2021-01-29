@@ -63,6 +63,15 @@ body {
   font-size: 1.1rem;
 }
 
+div {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .website-wrapper {
   width: 100%;
   position: relative;
@@ -273,7 +282,7 @@ body {
 }
 
 .roulette-table .roulette-wheel-container .roulette-wheel .roulette-wheel-main {
-  background-image: url(../images/roulette-wheel.webp);
+  background-image: url(../images/roulette-wheel.png);
   -webkit-transition: 1s -webkit-transform ease;
   transition: 1s -webkit-transform ease;
   transition: 1s transform ease;
@@ -283,17 +292,17 @@ body {
 }
 
 .roulette-table .roulette-wheel-container .roulette-wheel .roulette-center {
-  background-image: url(../images/roulette-wheel-center.webp);
+  background-image: url(../images/roulette-wheel-center.png);
 }
 
 .roulette-table .roulette-wheel-container .roulette-wheel .roulette-cross-shadow {
   left: 2%;
   top: 2%;
-  background-image: url(../images/roulette-wheel-cross-shadow.webp);
+  background-image: url(../images/roulette-wheel-cross-shadow.png);
 }
 
 .roulette-table .roulette-wheel-container .roulette-wheel .roulette-cross {
-  background-image: url(../images/roulette-wheel-cross.webp);
+  background-image: url(../images/roulette-wheel-cross.png);
 }
 
 .roulette-table .roulette-wheel-container .roulette-wheel .roulette-wheel-spin {
@@ -311,7 +320,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: url(../images/roulette-number-glow.webp);
+  background-image: url(../images/roulette-number-glow.png);
   background-size: cover;
   background-position: center;
 }
@@ -359,7 +368,7 @@ body {
   width: 1.5rem;
   height: 7%;
   width: 45%;
-  background-image: url(../images/roulette-ball.webp);
+  background-image: url(../images/roulette-ball.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-animation: ball-animation 5s forwards ease-out;
@@ -545,7 +554,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background-image: url(../images/roulette-table.webp);
+  background-image: url(../images/roulette-table.png);
   background-position: center;
   background-size: 100% 100%;
   padding: 2px;
@@ -755,27 +764,27 @@ body {
 }
 
 .betting-chip5 {
-  background-image: url(../images/chips-5.webp);
+  background-image: url(../images/chips-5.png);
 }
 
 .betting-chip10 {
-  background-image: url(../images/chips-10.webp);
+  background-image: url(../images/chips-10.png);
 }
 
 .betting-chip20 {
-  background-image: url(../images/chips-20.webp);
+  background-image: url(../images/chips-20.png);
 }
 
 .betting-chip50 {
-  background-image: url(../images/chips-50.webp);
+  background-image: url(../images/chips-50.png);
 }
 
 .betting-chip100 {
-  background-image: url(../images/chips-100.webp);
+  background-image: url(../images/chips-100.png);
 }
 
 .betting-chip200 {
-  background-image: url(../images/chips-200.webp);
+  background-image: url(../images/chips-200.png);
 }
 
 .betting-chip-shadow {
