@@ -35,7 +35,45 @@ resizeWindow();
 
 const rouletteNumbersRed = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
 const rouletteNumbersBlack = [2, 4, 6, 8, 11, 10, 13, 15, 17, 20, 24, 22, 26, 28, 29, 31, 33, 35];
-const rouletteNumbersArray = [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26];
+const rouletteNumbersArray = [
+  0,
+  32,
+  15,
+  19,
+  4,
+  21,
+  2,
+  25,
+  17,
+  34,
+  6,
+  27,
+  13,
+  36,
+  11,
+  30,
+  8,
+  23,
+  10,
+  5,
+  24,
+  16,
+  33,
+  1,
+  20,
+  14,
+  31,
+  9,
+  22,
+  18,
+  29,
+  7,
+  28,
+  12,
+  35,
+  3,
+  26
+];
 const betRangeArray = [
   { name: "column-1st12", rangeStart: 1, rangeEnd: 12 },
   { name: "column-2nd12", rangeStart: 13, rangeEnd: 24 },
@@ -61,26 +99,19 @@ const winChipsSound = new Audio("sounds/win-chips.mp3");
 const ambientSound = new Audio("sounds/ambient-sounds.mp3");
 const backgroundMusic = new Audio("sounds/background-music.mp3");
 
+var playAudio = true;
+var userInteraction = false;
+
 $(".website-wrapper").click(function () {
-  ambientSound.play();
-  backgroundMusic.play();
+  userInteraction = true;
+  if (playAudio) {
+    ambientSound.play();
+    backgroundMusic.play();
+  }
 });
 
 ambientSound.loop = true;
 backgroundMusic.loop = true;
-
-function defaultVolume() {
-  ambientSound.volume = 0.15;
-  backgroundMusic.volume = 0.2;
-  menuSound.volume = 0.3;
-  selectSound.volume = 0.3;
-  chipPutSound.volume = 0.2;
-  ballSpinSound.volume = 0.5;
-  winSound.volume = 0.4;
-  winChipsSound.volume = 0.4;
-}
-
-defaultVolume();
 
 const classColorName = (functionType) => {
   let className;
@@ -177,11 +208,15 @@ const cornerNumbers = () => {
                   $(`.number${a}`).addClass(classColorName(functionType));
                 }
               } else {
-                document.querySelectorAll(`.number${i} ,.number${i - 3}, .number${i - 4}, .number${i - 1}`).forEach((el) => el.classList.add(classColorName(functionType)));
+                document
+                  .querySelectorAll(`.number${i} ,.number${i - 3}, .number${i - 4}, .number${i - 1}`)
+                  .forEach((el) => el.classList.add(classColorName(functionType)));
               }
               break;
             case 0:
-              document.querySelectorAll(`.number${i} ,.number${i - 3}, .number${i - 4}, .number${i - 1}`).forEach((el) => el.classList.add(classColorName(functionType)));
+              document
+                .querySelectorAll(`.number${i} ,.number${i - 3}, .number${i - 4}, .number${i - 1}`)
+                .forEach((el) => el.classList.add(classColorName(functionType)));
               break;
             default:
               for (let a = i - 3; a < i + 3; a++) {
@@ -266,11 +301,15 @@ const chipSelection = () => {
     $(".betting-chip-menu").removeClass("active-chip");
     $(this).addClass("active-chip");
     activeChipNumber = Number($(this).attr("id").substr(4));
-    selectSound.play();
+    if (playAudio) {
+      selectSound.play();
+    }
   });
 
   $(".betting-chip-menu").mouseover(function () {
-    menuSound.play();
+    if (playAudio && userInteraction) {
+      menuSound.play();
+    }
   });
 
   $(`.${activeChip}`).addClass("active-chip");
@@ -290,7 +329,9 @@ $(".cash-total").html(`${cashSum}.00`);
 $(".part").click(function () {
   if (bankSum >= betSum + activeChipNumber) {
     if (maxBet >= betSum + activeChipNumber) {
-      chipPutSound.play();
+      if (playAudio) {
+        chipPutSound.play();
+      }
 
       betSum = betSum + activeChipNumber;
       cashSum = cashSum - activeChipNumber;
@@ -313,9 +354,13 @@ $(".part").click(function () {
         } else if (areaChipCount >= 200) {
           activeChip = 200;
         }
-        $(this).html(`<div id="${areaChipCount}" class="betting-chip betting-chip-shadow betting-chip${activeChip}">${areaChipCount}</div>`);
+        $(this).html(
+          `<div id="${areaChipCount}" class="betting-chip betting-chip-shadow betting-chip${activeChip}">${areaChipCount}</div>`
+        );
       } else {
-        $(this).html(`<div id="${activeChipNumber}" class="betting-chip betting-chip-shadow betting-chip${activeChipNumber}">${activeChipNumber}</div>`);
+        $(this).html(
+          `<div id="${activeChipNumber}" class="betting-chip betting-chip-shadow betting-chip${activeChipNumber}">${activeChipNumber}</div>`
+        );
       }
     } else {
       $(".alert-max-bet").addClass("alert-message-visible");
@@ -326,27 +371,26 @@ $(".part").click(function () {
 });
 
 $(".circle-overlay").mouseover(function () {
-  menuSound.play();
+  if (playAudio && userInteraction) {
+    menuSound.play();
+  }
 });
 
 $(".circle-overlay").click(function () {
-  selectSound.play();
+  if (playAudio) {
+    selectSound.play();
+  }
 });
 
 $(".button-sound").click(function () {
   if ($(".cross-line").hasClass("cross-line-display")) {
     $(".cross-line").removeClass("cross-line-display");
-    defaultVolume();
+    playAudio = true;
   } else {
     $(".cross-line").addClass("cross-line-display");
-    ambientSound.volume = 0;
-    backgroundMusic.volume = 0;
-    menuSound.volume = 0;
-    selectSound.volume = 0;
-    chipPutSound.volume = 0;
-    ballSpinSound.volume = 0;
-    winSound.volume = 0;
-    winChipsSound.volume = 0;
+    playAudio = false;
+    ambientSound.pause();
+    backgroundMusic.pause();
   }
 });
 
@@ -370,7 +414,9 @@ $(".button-spin").click(function () {
   if (betSum == 0) {
     $(".alert-bets").addClass("alert-message-visible");
   } else {
-    ballSpinSound.play();
+    if (playAudio) {
+      ballSpinSound.play();
+    }
     winAmount = 0;
     winAmountOnScreen = 0;
     cashSumBefore = cashSum;
@@ -430,11 +476,21 @@ $(".button-spin").click(function () {
 
         //Corners check
         if (i == 1) {
-          areaBetCheck("corner", i, rouletteNumber == i || rouletteNumber == i + 1 || rouletteNumber == i + 2 || rouletteNumber == i - 1, 9);
+          areaBetCheck(
+            "corner",
+            i,
+            rouletteNumber == i || rouletteNumber == i + 1 || rouletteNumber == i + 2 || rouletteNumber == i - 1,
+            9
+          );
         } else if (i == 2 || i == 3) {
           areaBetCheck("corner", i, rouletteNumber == i || rouletteNumber == i - 1 || rouletteNumber == 0, 12);
         } else if (i > 3) {
-          areaBetCheck("corner", i, rouletteNumber == i || rouletteNumber == i - 3 || rouletteNumber == i - 4 || rouletteNumber == i - 1, 9);
+          areaBetCheck(
+            "corner",
+            i,
+            rouletteNumber == i || rouletteNumber == i - 3 || rouletteNumber == i - 4 || rouletteNumber == i - 1,
+            9
+          );
         }
       }
     }
@@ -561,7 +617,9 @@ $(".button-spin").click(function () {
       if (win == true) {
         $(".win-lose").html("YOU WON");
         setTimeout(function () {
-          winSound.play();
+          if (playAudio) {
+            winSound.play();
+          }
         }, 5300);
       } else {
         $(".win-lose").html("NO WIN");
@@ -574,7 +632,6 @@ $(".button-spin").click(function () {
       }
       bankSum = cashSum;
     };
-
     lastRollDisplay();
     resultsDisplay();
   }
@@ -608,7 +665,9 @@ $(".alert-spin-result").click(function () {
 
   if (win == true) {
     setTimeout(function () {
-      winChipsSound.play();
+      if (playAudio) {
+        winChipsSound.play();
+      }
     }, 500);
   }
 
@@ -633,7 +692,9 @@ $(".alert-spin-result").click(function () {
 });
 
 $(".answer").mouseover(function () {
-  menuSound.play();
+  if (playAudio) {
+    menuSound.play();
+  }
 });
 
 $(".answer-yes").click(function () {

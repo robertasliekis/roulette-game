@@ -1,3 +1,37 @@
+// function defaultVolume() {
+//   ambientSound.volume = 0.15;
+//   backgroundMusic.volume = 0.2;
+//   menuSound.volume = 0.3;
+//   selectSound.volume = 0.3;
+//   chipPutSound.volume = 0.2;
+//   ballSpinSound.volume = 0.5;
+//   winSound.volume = 0.4;
+//   winChipsSound.volume = 0.4;
+// }
+
+//defaultVolume();
+
+$(".button-sound").click(function () {
+  if ($(".cross-line").hasClass("cross-line-display")) {
+    $(".cross-line").removeClass("cross-line-display");
+    playAudio = true;
+    // defaultVolume();
+  } else {
+    $(".cross-line").addClass("cross-line-display");
+    playAudio = false;
+    ambientSound.pause();
+    backgroundMusic.pause();
+    // ambientSound.volume = 0;
+    // backgroundMusic.volume = 0;
+    // menuSound.volume = 0;
+    // selectSound.volume = 0;
+    // chipPutSound.volume = 0;
+    // ballSpinSound.volume = 0;
+    // winSound.volume = 0;
+    // winChipsSound.volume = 0;
+  }
+});
+
 if ($(".column-red div").hasClass("betting-chip")) {
   var areaChipCount = Number(jQuery(".column-red").children(".betting-chip").attr("id"));
   if (rouletteNumber % 2 == 0 && rouletteNumber != 0) {
@@ -281,4 +315,4 @@ function areaBetCheck(columnName, columnNumber, equation, winMultiplier) {
   }
 }
 
-ambi
+ambi;
